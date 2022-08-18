@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Lato:wght@300;400&family=Montserrat:wght@700&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    font-size: 20px;
+}
+
+
+.container_carrucel{
+    width: 100%;
+    overflow: hidden;
+}
+
+header{
+    font-size: 20px;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    transition: all 1.5s;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0.712) , rgba(0, 0, 0, 0.356), transparent);
+}
+
+header.down{
+    background: rgba(0, 0, 0, 0.356);
+    padding: 15px 80px;
+    transition: all 1.5s;
+}
+
+
+header .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .menu ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul li{
+    list-style: none;
+    padding: 20px 0px;
+}
+
+header .menu a {
+    color: white;
+    font-weight: lighter;
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    transition: 1s;
+    transition-property: color, background;
+}
+
+header .menu a:hover{
+    color: #FEDB39;
+}
+
+header .menu__btn{
+    color: white;
+    font-size: 1.25em;
+    cursor: pointer;
+    display: none;
+}
+
+/*...............................carrucel........................................................... */
+.carrucel{
+    display: flex;
+    flex-direction: row;
+    width: 300%;
+    height: 850px;
+    margin-left: -100%;
+}
+.slider__seccion{
+    width: 100%;
+    position: relative;
+}
+
+.slider__imagen{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__texto{
+    position: absolute;
+    top: 50%;
+    left: 35vw;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+
+.boton__carrucel{
+    position: absolute;
+    height: 65px;
+    width: 50px;
+    top: 385px;
+    fill: white;
+    cursor: pointer;
+    z-index: 3;
+    margin: 0px 35px;
+    transition: 1s;
+}
+
+.boton__carrucel:hover{
+    fill: rgba(255, 255, 255, 0.473);
+    width: 75px;
+    transition:  1s;
+}
+
+.boton__carrucel--rigth{
+    right: 0px;
+    transform: rotate(-180deg)
+}
+
+.boton__carrucel--left{
+    left: 0;
+}
+
+/*-------------------------------------------------CSS SECCIONES EN GENERAL*/
+.main{
+    display: flex;
+}
+
+.seccion{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 95vh; 
+    position: relative;
+}
+.seccion__blanca{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+    position: relative;
+    z-index: 1;
+}
+.seccion__contenido{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 45vw;
+    gap: 25px;
+}
+.seccion__contenido--tarjeta{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 20vw;
+    min-height: 600px;
+    gap: 15px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* FONDOS PARALLAX*/
+
+.parallax{
+    display: flex;
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+}
+
+#fondo1{
+    background-image: url(imagenes/fondo_ladrillo.png);
+}
+#fondo2{
+    background-image: url(./imagenes/fondo\ con\ madera.png);
+}
+#fondo3{
+    background-image: url(./imagenes/fondo\ con\ doritos.png);
+}
+#fondo4{
+    background-image: url(./imagenes/fondo\ con\ muchas\ cosas.png);
+}
+
+
+/*detalles de los fondos*/
+
+#cortada{
+    position: absolute;
+    left: 0%;
+    transition: 1s;
+}
+#borde{
+    position: absolute;
+    right: 5%;
+    bottom: -15%;
+    z-index: 1;
+    transition: 1s;
+}
+
+/*A PARTIR DE ACA LA primera SECCION*/
+
+.primera{
+    position: relative;
+    overflow: hidden;
+    min-height: 85vh; 
+}
+
+
+.primera__sombra {
+    width: 100%;
+    margin-top: -53px;
+}
+
+/* A PARTIR DE ACA LA SEGUNDA SECCION */
+/*A PARTIR DE ACA LA TERCER SECCION */
+
+.tercera{
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*A PARTIR DE ACA LA CUARTA SECCION */
+/*A PARTIR DE ACA LA QUINTA SECCION */
+.quinta{
+    position: relative;
+    overflow: hidden;
+}
+
+/*A PARTIR DE ACA LA SEXTA SECCION */
+/*A PARTIR DE ACA LA SEPTIMA SECCION */
+
+.septima{
+    position: relative;
+    overflow: hidden;
+}
+
+/*A PARTIR DE ACA LA OCTAVA SECCION */
+
+
+#maps {
+	height: 300px;
+	width: 100%;
+    z-index: 2;
+}
+
+/*FOOTER*/
+
+footer{
+    background-image: url(./imagenes/Footer.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/*................................FUENTES LETRAS EN GENERAL......................................*/
+
+.parrafo {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.titulo__blanco {
+    font-size: 3em;
+    line-height: 0.9em;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.titulo__negro {
+    font-size: 2em;
+    color: #232323;
+    font-family: 'Playfair Display', serif;
+}
+
+.precio{
+    font-size: 2em;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.negro{
+    color: #232323;
+}
+
+.blanco{
+    color: white;
+}
+
+/*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,IMAGENES QUE LLEVAN EL WITH,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/
+
+.imagen__vw{
+    width: 100vw;
+}
+
+.imagen__vw--superior{
+    margin-bottom: -4;
+}
+
+@media screen and (max-width: 1670px){
+    #cortada{
+        position: relative;
+        left: -40vw;
+        transition: 1s;
+        z-index: -1;
+    }
+    .grande--pimiento{
+        margin-bottom: -135px ;
+        margin-top: -70px;
+    }
+    .grande--dos{
+        margin-top: -135px;
+    }
+    .grande--chips{
+        margin-bottom: -35px ;
+        margin-top: -75px;
+    }
+    #borde{
+        position: relative;
+        right: -35vw;
+        transition: 1s;
+        z-index: -1;
+        margin-bottom: -10vh;
+    }
+}
+
+@media screen and (max-width: 1285px){
+    .seccion__contenido{
+        flex-direction: column;
+    }
+    .column2{
+        border-top: solid rgba(0, 0, 0, 0.658) 2px;
+        padding-top: 50px;
+    }
+    .seccion__blanca{
+        margin: 35px;
+    }
+    .grande__noBlanca{
+        margin-top: -10vh;
+    }
+}
+
+@media screen and (max-width: 600px){
+    header, header.down{
+        padding: 20px 40px;
+    }
+    header.down{
+        background: transparent;
+    }
+    header .menu__btn{
+        display: block;
+    }
+    header .menu{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.836);
+        min-width: 33px ;
+        height: 100vh;
+        top: 0;
+        right: -127%;
+        padding: 80px 50px ;
+        transition-duration: 1s;
+        transition-property: right;
+    }
+    header .menu.active{
+        right: 0;
+        }
+    
+    header .menu ul{
+        flex-direction: column;
+        }
+    header .menu .menu__btn--close{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;        
+    }
+    header .menu a {
+        display: block;
+        padding: 0 15px;
+    }
+    header .menu__btn--open{
+        background-color: rgba(0, 0, 0, 0.836);
+        padding: 8px;
+        border-radius: 20%;
+    }
+    header .menu__btn--open.sacar{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .grande__noBlanca{
+        width: 100vw;
+    }
+}
