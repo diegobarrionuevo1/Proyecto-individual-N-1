@@ -31,8 +31,23 @@ closeBtn.addEventListener("click",()=>{
     openBtn.classList.remove("sacar")
 })
 
-/* ---------------------------------------paralax----------------------------------------------------------------------------------------------------------------------------------- */
+/* para el Submenu*/
+let botonSub = document.querySelector(".submenu--btn")
+botonSub.addEventListener("click",()=>{
+    let subMenu = document.querySelector(".submenu")
+    let flecha = document.getElementById ("flechita__sub")
+    if (document.documentElement.clientWidth > 768){
+        subMenu.classList.toggle("abierto")
+        flecha.classList.toggle("rotado")
+    }
+    if (document.documentElement.clientWidth <= 768){
+        subMenu.classList.toggle("abiertoHamburg")
+        flecha.classList.toggle("rotado")
+    }
+} )
 
+/* ---------------------------------------paralax----------------------------------------------------------------------------------------------------------------------------------- */
+/* 
 let fondo1 = document.getElementById('fondo1');
 let fondo2 = document.getElementById('fondo2');
 let fondo3 = document.getElementById('fondo3');
@@ -43,7 +58,7 @@ let carrouselMedida = document.querySelector(".carrucel").clientHeight;
 
 
 
-/* fondo1.style.transform = 'translateY('+ -288.3+'px)';
+fondo1.style.transform = 'translateY('+ -288.3+'px)';
 function moverFondo(fondo){
         let alturaViewport = document.documentElement.clientHeight;
         let posicion = window.pageYOffset||document.documentElement.scrollTop;
@@ -147,6 +162,7 @@ function Prev () {
 
 let idInterval = setInterval(Next,7000);
 let idTimeOut = null
+
 /* botones next y prev*/
 
 botonRigth.addEventListener("click", function (){
@@ -198,40 +214,121 @@ botonLeft.addEventListener("click", function (){
 
 
 
-/* function paralax (){
-    fondo1.style.transform = 'translateY(' + (document.documentElement.scrollTop-document.documentElement.clientHeight) * 0.4+'px)';
+function paralax (){
+    fondo1.style.transform = 'translateY(' + (document.documentElement.scrollTop-(document.documentElement.clientHeight)) * 0.4+'px)';
 addEventListener ('scroll',e=>{
     let scrollActual = e.currentTarget.scrollY;
     let alturaViewport = document.documentElement.clientHeight;
     let paginas= document.documentElement.offsetHeight / alturaViewport;
-
     let paginaActual = scrollActual/alturaViewport;
     let scrolTop = document.documentElement.scrollTop;
     console.log(paginaActual)
     
-        if (paginaActual >= 0 && paginaActual < 2) {
-            fondo1.style.transform = 'translateY(' + (scrolTop-alturaViewport) * 0.4+'px)';
+    if (document.documentElement.clientWidth <= 1920 && document.documentElement.clientWidth > 1285 ){
+        if (paginaActual >= 0 && paginaActual < 1.68) {
+            fondo1.style.transform = 'translateY(' + (scrolTop-(alturaViewport)) * 0.4+'px)';
         
             
         }
-        if (paginaActual >= 1.6 && paginaActual < 3) {
-            fondo2.style.transform = 'translateY(' + (scrolTop-(alturaViewport*2.5)) * 0.4+'px)';
+        if (paginaActual >= 1.22 && paginaActual < 3.15) {
+            fondo2.style.transform = 'translateY(' + (scrolTop-(alturaViewport*2.1)) * 0.4+'px)';
             
         }
-        if (paginaActual >= 2.7 && paginaActual < 5) {
-            fondo3.style.transform = 'translateY(' + (scrolTop-(alturaViewport*4)) * 0.4+'px)';
+        if (paginaActual >= 2.86 && paginaActual < 4.77) {
+            fondo3.style.transform = 'translateY(' + (scrolTop-(alturaViewport*3.8)) * 0.4+'px)';
             
         }
     
-        if (paginaActual >= 4.27 && paginaActual < 7) {
+        if (paginaActual >= 4.27 && paginaActual < 6.42) {
             fondo4.style.transform = 'translateY(' + (scrolTop-(alturaViewport*5.5)) * 0.4+'px)';
             
         }
+    }
+    if (document.documentElement.clientWidth <= 1285 && document.documentElement.clientWidth > 768 ){
+        if (paginaActual >= 0 && paginaActual < 1.88) {
+            fondo1.style.transform = 'translateY(' + (scrolTop-(alturaViewport)) * 0.4+'px)';
+        
+            
+        }
+        if (paginaActual >= 1.94 && paginaActual < 3.97) {
+            fondo2.style.transform = 'translateY(' + (scrolTop-(alturaViewport*3)) * 0.4+'px)';
+            
+        }
+        if (paginaActual >= 4 && paginaActual < 6.28) {
+            fondo3.style.transform = 'translateY(' + (scrolTop-(alturaViewport*5.3)) * 0.4+'px)';
+            
+        }
+    
+        if (paginaActual >= 6.5 && paginaActual < 8.41) {
+            fondo4.style.transform = 'translateY(' + (scrolTop-(alturaViewport*7.5)) * 0.4+'px)';
+            
+        }
+    }
+    if (document.documentElement.clientWidth <= 600 && document.documentElement.clientWidth > 555){
+        if (paginaActual >= 0 && paginaActual < 1.90) {
+            fondo1.style.transform = 'translateY(' + (scrolTop-(alturaViewport)) * 0.4+'px)';
+        
+            
+        }
+        if (paginaActual >= 2.26 && paginaActual < 4.41) {
+            fondo2.style.transform = 'translateY(' + (scrolTop-(alturaViewport*3.1)) * 0.4+'px)';
+            
+        }
+        if (paginaActual >= 4.86 && paginaActual < 7) {
+            fondo3.style.transform = 'translateY(' + (scrolTop-(alturaViewport*5.8)) * 0.4+'px)';
+            
+        }
+    
+        if (paginaActual >= 7.5 && paginaActual < 9.15) {
+            fondo4.style.transform = 'translateY(' + (scrolTop-(alturaViewport*9)) * 0.4+'px)';
+            
+        }
+    }
+    if (document.documentElement.clientWidth <= 414 && document.documentElement.clientWidth > 385){
+        if (paginaActual >= 0 && paginaActual < 1.54) {
+            fondo1.style.transform = 'translateY(' + (scrolTop-(alturaViewport)) * 0.4+'px)';
+        
+            
+        }
+        if (paginaActual >= 1.53 && paginaActual < 3.38) {
+            fondo2.style.transform = 'translateY(' + (scrolTop-(alturaViewport*2.8)) * 0.4+'px)';
+            
+        }
+        if (paginaActual >= 3.54 && paginaActual < 5.36) {
+            fondo3.style.transform = 'translateY(' + (scrolTop-(alturaViewport*4.5)) * 0.4+'px)';
+            
+        }
+    
+        if (paginaActual >= 5.44 && paginaActual < 9.15) {
+            fondo4.style.transform = 'translateY(' + (scrolTop-(alturaViewport*6.5)) * 0.4+'px)';
+            
+        }
+    }
+    
+    if (document.documentElement.clientWidth <= 385){
+        if (paginaActual >= 0 && paginaActual < 1.76) {
+            fondo1.style.transform = 'translateY(' + (scrolTop-(alturaViewport*0.9)) * 0.4+'px)';
+        
+            
+        }
+        if (paginaActual >= 2 && paginaActual < 4.1) {
+            fondo2.style.transform = 'translateY(' + (scrolTop-(alturaViewport*3.4)) * 0.4+'px)';
+            
+        }
+        if (paginaActual >= 4.6 && paginaActual < 6.74) {
+            fondo3.style.transform = 'translateY(' + (scrolTop-(alturaViewport*5.9)) * 0.4+'px)';
+            
+        }
+    
+        if (paginaActual >= 7.13 && paginaActual < 8.79) {
+            fondo4.style.transform = 'translateY(' + (scrolTop-(alturaViewport*8.5)) * 0.4+'px)';
+            
+        }
+    }
+    
 })
 }
 
-paralax(
-
-) */
+paralax()
 
 
